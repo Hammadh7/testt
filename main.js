@@ -66,12 +66,12 @@ scene.background = spaceTexture;
 // Avatar
 
 const faceTextures = [
-  new THREE.TextureLoader().load('/face/front-face.jpeg'),  // Front face
-  new THREE.TextureLoader().load('/face/back-face.jpeg'),   // Back face
-  new THREE.TextureLoader().load('/face/top-face.jpeg'),    // Top face
-  new THREE.TextureLoader().load('/face/bottom-face.jpeg'), // Bottom face
-  new THREE.TextureLoader().load('/face/right-face.jpeg'),  // Right face
-  new THREE.TextureLoader().load('/face/left-face.jpeg')    // Left face
+  new THREE.TextureLoader().load('/front-face.jpeg'),  // Front face
+  new THREE.TextureLoader().load('/back-face.jpeg'),   // Back face
+  new THREE.TextureLoader().load('/top-face.jpeg'),    // Top face
+  new THREE.TextureLoader().load('/top-face.jpeg'), // Bottom face
+  new THREE.TextureLoader().load('/right-face.jpeg'),  // Right face
+  new THREE.TextureLoader().load('/right-face.jpeg')    // Left face
 ];
 
 const materials = faceTextures.map(texture => new THREE.MeshBasicMaterial({ map: texture }));
