@@ -1,0 +1,223 @@
+@import url("https://use.typekit.net/jmk3xov.css");
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: black;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+:root {
+  --dark-bg: rgba(15, 15, 15, 0.8); /* Slightly more translucent */
+  --accent-color: rgba(255, 69, 105, 0.8); /* Vibrant accent color */
+  --spacing: 3rem; /* Modern spacing */
+
+  font-family: "Inter", sans-serif; /* Modern, clean font */
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(120deg, rgba(20, 20, 20, 0.9), rgba(40, 40, 40, 0.9));
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-family);
+}
+
+main {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.95); /* Near-white for readability */
+  z-index: 99;
+  position: relative;
+  margin: 0 auto;
+  padding: 6rem 1rem; /* Add some padding for smaller devices */
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem; /* Adds spacing between grid items */
+}
+
+h1, h2, h3, blockquote {
+  font-family: "Poppins", sans-serif; /* Modern header font */
+  font-weight: 600;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+header {
+  background: var(--dark-bg);
+  grid-column: 1 / span 6;
+  font-size: 2rem;
+  text-align: left;
+  padding: 2rem;
+  margin-bottom: var(--spacing);
+  border-radius: 12px; /* Modern rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow */
+  backdrop-filter: blur(8px); /* Subtle glass effect */
+
+  /* Make text wrap for smaller screens */
+}
+
+section {
+  grid-column: 2 / span 10;
+  padding: 2rem;
+  background: var(--dark-bg);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: var(--spacing);
+  font-family: "Smooch Sans", serif;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+
+
+
+
+/* Optional: Style the paragraph */
+p {
+  font-size: 1.2em;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 20vh;
+  margin-bottom: 1.5rem;
+}
+
+blockquote {
+  margin: 0;
+  padding: 2rem;
+  grid-column: 1 / span 5;
+  margin-bottom: var(--spacing);
+  border-left: 4px solid var(--accent-color);
+  background: rgba(255, 255, 255, 0.1); /* Light translucent background */
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+blockquote p {
+  color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 1.5rem;
+  display: inline;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+/* Styling for the typed text */
+.typed {
+  font-weight: bold;
+  color: #000; /* Customize text color */
+  border-right: 2px solid #000; /* Cursor effect */
+  padding-right: 5px;
+  animation: blink-caret 0.7s step-end infinite;
+}
+
+/* Blinking caret animation */
+@keyframes blink-caret {
+  from {
+      border-color: transparent;
+  }
+  to {
+      border-color: #000;
+  }
+}
+
+/* Additional refinements */
+.left {
+  grid-column: 2 / 8;
+  margin-right: 80%;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  header {
+    grid-column: 1 / span 8;
+    font-size: 1.8rem;
+    padding: 1.5rem;
+  }
+
+  section {
+    grid-column: 1 / span 8;
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  blockquote {
+    grid-column: 1 / span 4;
+  }
+
+  .left {
+    grid-column: 1 / span 4;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  header {
+    grid-column: 1 / span 4;
+    font-size: 1.6rem;
+  }
+
+  section {
+    grid-column: 1 / span 4;
+    font-size: 1rem;
+  }
+
+  blockquote {
+    grid-column: 1 / span 4;
+  }
+
+  .left {
+    grid-column: 1 / span 4;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-top: 10vh;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  header, section, blockquote {
+    grid-column: 1 / span 2;
+    padding: 1rem;
+  }
+
+  header {
+    font-size: 1.4rem;
+  }
+
+  section {
+    font-size: 0.875rem;
+  }
+
+  blockquote {
+    font-size: 0.875rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}

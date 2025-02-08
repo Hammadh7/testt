@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeff's Website</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f9fc;
+        color: #333;
+      }
+
+      header {
+        text-align: center;
+        padding: 2rem;
+        background-color: #4CAF50;
+        color: white;
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2.5rem;
+      }
+
+      p {
+        margin: 0.5rem 0 0;
+      }
+
+      /* Carousel Section */
+      .carousel-container {
+        position: relative;
+        overflow: hidden;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: #ffffff;
+      }
+
+      .carousel {
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+      }
+
+      .carousel img {
+        min-width: 100%;
+        object-fit: cover;
+      }
+
+      .carousel-controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+
+      .carousel-controls button {
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+        pointer-events: all;
+        transition: background 0.3s;
+      }
+
+      .carousel-controls button:hover {
+        background: rgba(0, 0, 0, 0.8);
+      }
+
+      .carousel-container:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="portfolio" class="portfolio">
+      <div class="carousel-container" tabindex="0" aria-label="Carousel">
+        <div class="carousel" id="carousel">
+          <img src="assets/img/portfolio/portfolio-1.jpeg" alt="Portfolio Image 1" />
+          <img src="assets/img/portfolio/img3.jpeg" alt="Portfolio Image 2" />
+          <img src="assets/img/portfolio/img4.jpeg" alt="Portfolio Image 3" />
+          <img src="assets/img/portfolio/shirt.jpg" alt="Portfolio Image 4" />
+        </div>
+        <div class="carousel-controls">
+          <button id="prev" aria-label="Previous">&lt;</button>
+          <button id="next" aria-label="Next">&gt;</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const carousel = document.getElementById("carousel");
+      const images = document.querySelectorAll(".carousel img");
+      const prevButton = document.getElementById("prev");
+      const nextButton = document.getElementById("next");
+      let index = 0;
+
+      const updateCarousel = () => {
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+      };
+
+      nextButton.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        updateCarousel();
+      });
+
+      prevButton.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        updateCarousel();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
+          index = (index + 1) % images.length;
+          updateCarousel();
+        } else if (e.key === "ArrowLeft") {
+          index = (index - 1 + images.length) % images.length;
+          updateCarousel();
+        }
+      });
+    </script>
+  </body>
+</html>

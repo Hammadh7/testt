@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hammad's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      .contact-section {
+        padding: 2 rem;
+        margin: 2 rem 0;
+        background-color: rgba(208, 228, 255, 0.332); /* Yellowish with transparency */
+        backdrop-filter: blur(9px); /* Adds a blur effect to content behind */
+        border-radius: 100px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.021);
+        max-width: 800px; /* Set max width */
+  width: 90%; /* Adjust width to make it more responsive */
+      }
+      
+      .contact-section h2 {
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+      
+      .contact-form {
+        max-width: 500px;
+        margin: 0 auto;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #444;
+      }
+      
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        background-color: rgba(255, 255, 255, 0.9);
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+      }
+      
+      .form-group textarea {
+        height: 150px;
+        resize: vertical;
+      }
+      
+      .submit-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+      
+      .submit-btn:hover {
+        background-color: #45a049;
+        transform: translateY(-2px);
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #4CAF50;
+        box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+      }
+    </style>
+    <style>
+      .socials-section {
+        text-align: center;
+        padding: 2rem 0;
+        border-radius: 100px;
+
+      }
+    
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        border-radius: 6px;
+
+      }
+    
+      .social-links a {
+        display: inline-block;
+        transition: transform 0.2s ease;
+      }
+    
+      .social-links a:hover {
+        transform: scale(1.1);
+      }
+    
+      .social-links img {
+        border-radius: 10%;
+        box-shadow: 0 2px 4px rgba(105, 211, 44, 0.151);
+      }
+    </style>
+    <style>
+   /* Modern Slider Section Styles */
+   .slider-section {
+     padding: 2rem;
+     text-align: center;
+     background: rgba(255, 255, 255, 0);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  backdrop-filter: blur(0px);
+     /* background: linear-gradient(135deg, #f8f9fa, #e9ecef); */
+   }
+   
+   .slider-section h2 {
+     font-family: 'Poppins', sans-serif;
+     font-size: 2rem;
+     font-weight: 700;
+     color: #689faf;
+     margin-bottom: 1.5rem;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+   }
+   
+   /* Slider Container */
+   .slider {
+     position: relative;
+     max-width: 900px;
+     margin: 0 auto;
+     overflow: hidden;
+     border-radius: 15px;
+     background: rgba(255, 255, 255, 0);
+     box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+     backdrop-filter: blur(0px);
+     /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); */
+     
+   }
+   
+   /* Slider Images */
+   .slider-images {
+     display: flex;
+     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   
+   .slider-images .image-container {
+     position: relative;
+     width: 100%;
+     flex-shrink: 0;
+   }
+   
+   .slider-images img {
+     width: 100%;
+     border-radius: 15px;
+     object-fit: cover;
+     transition: transform 0.4s ease;
+   }
+   
+   .slider-images img:hover {
+     transform: scale(1.08);
+     filter: brightness(1.1);
+   }
+   
+   /* Glassmorphism Hover Effect */
+   .image-container .image-overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.3);
+     backdrop-filter: blur(10px);
+     color: white;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     opacity: 0;
+     border-radius: 15px;
+     font-family: 'Poppins', sans-serif;
+     font-size: 1.2rem;
+     padding: 1.2rem;
+     transition: opacity 0.4s ease, transform 0.3s ease;
+   }
+   
+   .image-container:hover .image-overlay {
+     opacity: 1;
+     transform: scale(1.02);
+   }
+   
+   /* Modern Slider Controls */
+   .slider-controls {
+     position: absolute;
+     top: 50%;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     transform: translateY(-50%);
+     z-index: 10;
+   }
+   
+   .slider-controls button {
+     background: rgba(255, 255, 255, 0.2);
+     backdrop-filter: blur(8px);
+     color: white;
+     border: none;
+     padding: 1rem;
+     border-radius: 50%;
+     cursor: pointer;
+     transition: background 0.3s ease, transform 0.2s ease;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+   }
+   
+   .slider-controls button:hover {
+     background: rgba(255, 255, 255, 0.4);
+     transform: scale(1.1);
+   }
+   
+   .slider-controls .prev {
+     margin-left: 1rem;
+   }
+   
+   .slider-controls .next {
+     margin-right: 1rem;
+   }
+   
+   /* Responsive Design */
+   @media (max-width: 768px) {
+     .slider-section h2 {
+       font-size: 1.6rem;
+     }
+   
+     .slider-controls button {
+       padding: 0.7rem;
+     }
+   }
+  </style>
+   
+    <style>
+    container{
+      padding: 0 25px;
+      margin: 0 60px;
+      ul{
+        position: relative;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        &:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -20px;
+          height: 100%;
+          border: 1px dashed #aaa;
+        }
+      }
+    }
+    .box{
+      margin: 50px 0;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.2);
+      width: 400px;
+      position: relative;
+      letter-spacing: 2px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      box-shadow: 1px 1px 3px rgba(100, 100, 100, 0.3);
+      >span{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -20px;
+        height: 100%;
+        border: 1px solid #ccc;
+        &:before,
+        &:after{
+          content: "";
+          position: absolute;
+          left: -7px;
+          width: 10px;
+          height: 10px;
+          border: 2px solid #ccc;
+          background: #01579B;
+          border-radius: 100%;
+        }
+        &:before{
+          top: -12px;
+        }
+        &:after{
+          top: 100%;
+        }
+      }
+      
+      .title{
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin-top: 10px;
+      }
+      .sub-title{
+        font-size: 0.6rem;
+        color: #aaa;
+      }
+      .info{
+        margin: 15px 0;
+      }
+      .time{
+        span{
+          position: absolute;
+          font-size: 0.5rem;
+          color: #aaa;
+          &:first-child{
+            top: -10px;
+            left: -70px;
+          }
+          &:last-child{
+            top: 100%;
+            left: -70px;
+          }
+        }
+      }
+    }
+  </style>
+  <style>
+    .content {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+            /* text-align: center; */
+            /* flex-wrap: wrap; */
+            justify-content: center; /* Centers the projects container */
+
+        }
+        .image-section img:hover {
+            opacity: 0.7;
+        }
+        .mergedd-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes text to left and image to right */
+    gap: 40px; /* Adds space between text and image */
+    width: 100%; /* Ensures full-width layout */
+    margin-bottom: 30px; /* Adds spacing between projects */
+}
+
+.textt-section {
+    flex: 1; /* Allows text to take available space */
+    font-size: 1.2rem;
+    max-width: 70%; /* Limits text width */
+}
+
+.imagee-section {
+    flex-shrink: 0; /* Prevents the image from shrinking */
+    display: flex;
+    justify-content: flex-end; /* Aligns image to the right */
+    width: 50%; /* Ensures image stays on the right */
+}
+
+.imagee-section img {
+    max-width: 100%; /* Ensures image responsiveness */
+    border-radius: 10px; /* Optional: Rounded corners */
+    z-index: 10;
+}
+.text-section ul {
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 0; /* Removes default padding */
+    margin-left: 0; /* Ensures proper alignment */
+}
+
+
+  </style>
+  <style>
+    /* .aboutt
+    {
+      /* font-family: Nunito, sans-serif;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  margin-left: 10%;
+  margin-right: 10%; */
+  /* background-image: url("https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb29.png"); */
+ */
+  .Techs {
+  
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+</style>
+    
+  </head>
+  <body>
+
+    <canvas id="bg"></canvas>   
+
+    <main>
+
+      <header>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+          </style>
+        <h2 style="margin-bottom: 5px;font-family: Copperplate;">Hi There 👀</h2>
+        <h3 style="margin-bottom: 5px;font-family: Smooch Sans;">This is</h3>
+        <h1 style="margin-top: 5px;font-family: Smooch Sans ">Hammad Hashmi</h1>
+        
+        <p>🚀 Welcome to my website!</p>
+      </header>
+
+      <section class="aboutt">
+        <div>
+       <h1 style="color: rgb(246, 254, 255);margin-bottom: 5px;">ABOUT ME 😸</h1>
+       
+       <p style="color: rgb(246, 257, 253);font-family: Futura;margin-top: 5px;">I'm a tech enthusiast passionate about AI, finance, and automation. With a strong background in C++, JavaScript, and Python,
+         I enjoy solving complex problems and optimizing systems for efficiency. 
+        My interests lie in machine learning, Web development, and research-driven automation, where I aim to build impactful and intelligent solutions. 
+        I also have experience working on collaborative projects, Working as a Youtuber, and exploring innovative applications of technology. 
+        Currently, I'm expanding my expertise in data science and Alogorithmic Trading to drive meaningful advancements in the field."
+       </p>
+      </div>
+      </section>
+
+      <blockquote>
+        <p>
+          A <span id="typed" class="typed"></span>
+      </p>      </blockquote>
+
+      <!-- <section class="tetris-section">
+        <h1>Backbone Tetris</h1>
+        <p>Implementation of Tetris in backbone.js</p>
+        <div id="controls">
+          <button id="pause">Pause (p)</button>
+          <button id="mute">Mute (m)</button>
+          <button id="new_game">New Game (n)</button>
+        </div>
+        <div id="board">
+          <canvas width="300" height="500"></canvas>
+          <div id="gridContainer">
+            <div class="grid"></div>
+          </div>
+          <div id="message"></div>
+        </div>
+      </section> -->
+      
+      <section class="light">
+        <h1>🏆 PROJECTS</h1>
+        <div class="content">
+          <div class="mergedd-section">
+              <div class="textt-section">
+                  <h3>Bitcoin From Scrach</h3>
+                  <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
+                    
+                      <li>Implemented the Bitcoin from scratch leveraging core concepts like distributed ledger technology, cryptographic hashing, mining</li>
+                      <li>Designed a peer-to-peer network protocol for decentralized communication</li>
+                      <li>OOP,Javascript,Express.js</li>
+                  </ul>
+              </div>
+              <div class="imagee-section">
+                  <a href="https://github.com/Hammadh7/bitcoin-from-scratch"><img src="image copy 2.png" alt="Clickable Image"></a>
+              </div>
+          </div>
+        </div>
+          
+
+        <div class="content">
+          <div class="mergedd-section">
+              <div class="textt-section">
+                  <h3>Electroton 5.0 website</h3>
+                  <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
+                    <li>Globally acclaimed event organized by Team SPEC with 1000+ registrations</li>
+                      <li>Designed and implemented UI for this as a group project appraised by more than 95% users</li>
+                      <li>Javascript, React, UI/UX</li>
+                  </ul>
+              </div>
+              <div class="imagee-section">
+                  <a href="https://electrothon.nith.ac.in/"><img src="image copy 3.png" alt="Clickable Image"></a>
+              </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="mergedd-section">
+              <div class="textt-section">
+                  <h3>C Compiler</h3>
+                  <ul style="list-style-type: none; padding-left: 0; margin-left: 0;">
+                    <li>Developed a C to x86 64 compilation toolchain, harnessing Flex++ and Bison to facilitate lexical analysis</li>
+                      <li>Implemented Backpatching technique to generate intermediate three-address code in a single forward pass</li>
+                      <li>C, Lex, YACC</li>
+                  </ul>
+              </div>
+              <div class="imagee-section">
+                  <a href="#"><img src="image copy 4.png" alt="Clickable Image"></a>
+              </div>
+          </div>
+        </div>
+
+      </section> 
+      <section class="Techs">
+        <h1>Techs I am working on</h1>
+        
+        <img src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white" alt="C">
+        <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++">
+        <img src="https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white" alt="Solidity">
+        <img src="https://img.shields.io/badge/bash_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash Script">
+        <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
+        <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React">
+        <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
+        <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+        <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+        <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+        <img src="https://img.shields.io/badge/mongodb-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
+        <img src="https://img.shields.io/badge/Figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
+        <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+        <img src="https://img.shields.io/badge/Jupyter-%23F37626.svg?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter Notebook">
+        <img src="https://img.shields.io/badge/Arduino%20UNO-%2300979D.svg?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino UNO">
+        <img src="https://img.shields.io/badge/Google%20Colab-%23F9AB00.svg?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Google Colab">
+        <img src="https://img.shields.io/badge/Remix-%23000000.svg?style=for-the-badge&logo=ethereum&logoColor=white" alt="Remix">
+        <img src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+        <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+        <img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
+        <img src="https://img.shields.io/badge/seaborn-%232E4A62.svg?style=for-the-badge&logo=python&logoColor=white" alt="Seaborn">
+        <img src="https://img.shields.io/badge/llama-%23E34F26.svg?style=for-the-badge&logo=pytorch&logoColor=white" alt="LLaMA">
+        <img src="https://img.shields.io/badge/Linux-%23FCC624.svg?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+        <img src="https://img.shields.io/badge/Blockchain-%23000000.svg?style=for-the-badge&logo=ethereum&logoColor=white" alt="Blockchain">
+        <img src="https://img.shields.io/badge/pytorch-%23EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch">
+        <img src="https://img.shields.io/badge/tensorflow-%23FF6F00.svg?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow">
+        <img src="https://img.shields.io/badge/matplotlib-%23ffffff.svg?style=for-the-badge&logo=matplotlib&logoColor=black" alt="Matplotlib">
+        <img src="https://img.shields.io/badge/deeplearning-%230A192F.svg?style=for-the-badge&logo=deeplearning&logoColor=white" alt="Deep Learning">
+        <img src="https://img.shields.io/badge/kaggle-%2306B6D4.svg?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle">
+
+
+      </section>   
+
+      <blockquote>
+        <p>The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge. <br>-Stephen Hawking</p>
+      </blockquote>
+      
+      <!-- slider -->
+      <section class="slider-section">
+        <h2>🌟 Featured Works</h2>
+        <div class="slider">
+          <div class="slider-images">
+            <div class="image-container">
+              <a href="https://youtube.com/@tss.theskillshow?si=wpyoVqsHLJ34zHhz" target="_blank">
+                <img src="image.png" alt="YT">
+                <!-- <div class="image-overlay">Project 1 Description: Innovative design and modern features.</div> -->
+              </a>
+            </div>
+            <div class="image-container">
+              <a href="#" target="_blank">
+                <img src="image copy.png" alt="Project 2">
+                <!-- <div class="image-overlay">Project 2 Description: A creative approach to solving challenges.</div> -->
+              </a>
+            </div>
+            <!-- <div class="image-container">
+              <a href="https://example.com/project3" target="_blank">
+                <img src="image3.jpg" alt="Project 3">
+                <div class="image-overlay">Project 3 Description: Cutting-edge technology at its best.</div>
+              </a>
+            </div> -->
+          </div>
+          <div class="slider-controls">
+            <button class="prev">&lt;</button>
+            <button class="next">&gt;</button>
+          </div>
+        </div>
+      </section>
+      
+     
+      
+      
+
+
+
+     
+
+      <section class="left">
+        <!-- <h2>🌮 Work History</h2> -->
+         <!-- timeline -->
+      <div class="container">
+        <ul>
+          <li class="box">
+            <span></span>
+            <div class="title">NIT HAMIRPUR</div>
+            <div class="sub-title">2022 - 2026</div>
+            <div class="info">Pursuing Bachelor's in Computer Science</div>
+        
+          </li>
+          <li class="box">
+            <span></span>
+            <div class="title">RAHMANI 30</div>
+            <div class="sub-title">2020 - 2022</div>
+            <div class="info">Studies Pre-College Physics , Chemistry and Mathematics</div>
+           
+          </li>
+         
+        </ul>
+      </div>
+
+      </section>
+
+      <!-- Updated Contact Section -->
+      <section class="contact-section">
+        <h2>📧 Contact Me</h2>
+        <form class="contact-form" action="mailto:hammadhashmi303@gmail.com" method="POST" enctype="text/plain">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </section>
+
+      <section class="socials-section">
+        <h2>🌐 My Socials</h2>
+        <div class="social-links">
+          <a href="https://github.com/Hammadh7" target="_blank" title="GitHub">
+            <img src="https://img.icons8.com/nolan/96/github.png" alt="GitHub" width="40" />
+          </a>
+          <a href="https://twitter.com/hammad_h7" target="_blank" title="Twitter">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/300px-X_logo_2023.svg.png" alt="Twitter" width="40" />
+          </a>
+          <a href="https://medium.com/@hammadhashmi303" target="_blank" title="Medium">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Medium_logo_Monogram.svg" alt="Medium" width="40" />
+          </a>
+          <a href="https://www.linkedin.com/in/hammad-hashmi-b278a625a/" target="_blank" title="LinkedIn">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="40" />
+          </a>
+          <a href="https://www.instagram.com/hammad_h7/" target="_blank" title="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="40" />
+          </a>
+          <a href="https://codeforces.com/profile/Hammad_h7" target="_blank" title="codeforces">
+            <img src="https://art.npanuhin.me/SVG/Codeforces/Codeforces.colored.svg" alt="CF" width="40" />
+          </a>
+         
+        </div>
+      </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script type="module" src="/main.js"></script>
+
+  </body>
+</html>
